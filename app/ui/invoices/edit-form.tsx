@@ -10,6 +10,7 @@ import {
 import Link from 'next/link';
 import { Button } from '@/app/ui/button';
 import { updateInvoice } from '@/app/lib/actions';
+import { useFormState } from 'react-dom';
 
 export default function EditInvoiceForm({
   invoice,
@@ -21,12 +22,16 @@ export default function EditInvoiceForm({
   console.log(invoice)
 
   const id = invoice.id
-  const updateInvoicewithId = updateInvoice.bind(null, id)
+  const initialState = {message:null,errors:{}}
+  const updateInvoicewithId = updateInvoice?.bind(null, id)
+  // const [state, dispatch] = useFormState(updateInvoicewithId, initialState)
+  // const[]
   // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   //   e.preventDefault();
   //   const formData = new FormData(event.currentTarget);
   //   await updateInvoice(invoice.id, formData);
   // };
+
 
   return (
     <form action={updateInvoicewithId}>
