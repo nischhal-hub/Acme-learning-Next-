@@ -66,6 +66,7 @@ export async function updateInvoice(id: string, formData: FormData) {
 }
 
 export async function deleteInvoice(id: string) {
+    // throw new Error('Database error! Cannot be deleted.')
     try{
     await sql`DELETE from invoices WHERE id = ${id}`
     revalidatePath('/dashboard/invoices')
