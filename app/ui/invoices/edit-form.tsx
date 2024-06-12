@@ -24,6 +24,7 @@ export default function EditInvoiceForm({
   const id = invoice.id
   const initialState = {message:null,errors:{}}
   const updateInvoicewithId = updateInvoice?.bind(null, id)
+
   // const [state, dispatch] = useFormState(updateInvoicewithId, initialState)
   // const[]
   // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
